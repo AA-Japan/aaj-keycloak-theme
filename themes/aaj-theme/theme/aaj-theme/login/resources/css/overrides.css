@@ -1,4 +1,5 @@
 :root {
+  --root-font: "Inter", Helvetica, Arial, sans-serif;
   --pf-v5-global--primary-color--100:#30302e;
   --pf-v5-global--primary-color--200:#242424;
 
@@ -8,8 +9,8 @@
   --pf-global--link--Color--hover: #556a7e;
 
   --pf-v5-c-title--m-3xl--FontWeight: var(--pf-v5-global--FontWeight--bold) !important;
-  --pf-v5-global--FontFamily--heading: "Space Grotesk", Helvetica, Arial, sans-serif;
-  --pf-v5-global--FontFamily--text:"Space Grotesk", Helvetica, Arial, sans-serif;
+  --pf-v5-global--FontFamily--heading: var(--root-font);
+  --pf-v5-global--FontFamily--text: var(--root-font);
 }
 
 ::placeholder {
