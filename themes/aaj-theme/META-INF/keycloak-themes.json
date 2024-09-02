@@ -1,0 +1,8 @@
+{
+  "themes": [
+    {
+      "name": "aaj-theme",
+      "types": ["login"]
+    }
+  ]
+}
