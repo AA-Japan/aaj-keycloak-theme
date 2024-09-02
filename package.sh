@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the folder path
-folder_path="themes/custom-theme"
+folder_path="themes/aaj-theme"
 providers_dir="providers"
 
 # Check if the folder exists

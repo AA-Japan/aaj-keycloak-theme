@@ -25,7 +25,7 @@ services:
         # Providers
         # - './providers:/opt/keycloak/providers'
         # Development theme folder
-        - './themes/custom-theme/theme:/opt/keycloak/themes'
+        - './themes/aaj-theme/theme:/opt/keycloak/themes'
       depends_on:
         - postgres
       environment:
