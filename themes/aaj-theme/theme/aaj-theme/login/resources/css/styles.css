@@ -1,7 +1,7 @@
 /** Fonts **/
-@import url('./custom-font.css');
+@import url("./custom-font.css");
 /* Overrides */
-@import url('./overrides.css');
+@import url("./overrides.css");
 /* Defaults */
 
 .pf-v5-c-login__container {
@@ -9,26 +9,18 @@
   grid-template-columns: 34rem;
 }
 
-#kc-header-wrapper {
-  padding: 62px 10px 20px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .login-pf body {
-  background: #e1e1e1;
+  /* background: #e1e1e1; */
+  background-color:hsla(349,0%,100%,1);
+  background-image:
+  radial-gradient(at 38% 27%, hsla(0,0%,94%,1) 0px, transparent 50%),
+  radial-gradient(at 51% 30%, hsla(357,34%,76%,1) 0px, transparent 50%),
+  /* radial-gradient(at 90% 96%, rgb(255, 208, 208) 0px, transparent 50%), */
+  radial-gradient(at 57% 61%, rgb(222, 181, 181) 0px, transparent 50%);
   background-size: cover;
   height: 100%;
 }
 
-div.kc-logo-text {
-  background-repeat: no-repeat;
-  height: 63px;
-  width: 300px;
-  margin: 0 auto;
-}
-
-div.kc-logo-text span {
-  display: none;
+.pf-v5-c-login__main-body .pf-v5-c-alert {
+  margin-bottom: var(--pf-v5-global--spacer--md);
 }

@@ -55,11 +55,6 @@
 </head>
 
 <body id="keycloak-bg" class="${properties.kcBodyClass!}">
-<div id="kc-header" class="${properties.kcHeaderClass!}">
-    <div id="kc-header-wrapper"
-             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
-    </div>
-</div>
 <div class="pf-v5-c-login"
     x-data="{
         open: false,
@@ -86,8 +81,11 @@
 >
   <div class="pf-v5-c-login__container">
     <main class="pf-v5-c-login__main">
+    <div id="kc-header-wrapper"class="${properties.kcHeaderWrapperClass!}">
+     ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
+    </div>
       <header class="pf-v5-c-login__main-header">
-          <h1 class="pf-v5-c-title pf-m-3xl"><#nested "header"></h1>
+          <h1 class="pf-v5-c-title pf-m-3xl pf-v5-u-pb-xl"><#nested "header"></h1>
           <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
           <div class="pf-v5-c-login__main-header-utilities">
           <div class="pf-v5-c-form-control">
