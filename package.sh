@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Define the folder path
-folder_path="themes/custom-theme"
+folder_path="themes/aaj-theme"
+theme_name="aaj-theme"
 providers_dir="providers"
 
 # Check if the folder exists
@@ -16,10 +17,10 @@ if [ ! -d "$providers_dir" ]; then
 fi
 
 # Prompt for the JAR file name or use a default name
-read -p "Enter the theme name (default: custom-theme): " jar_name
+read -p "Enter the theme name (default: $theme_name): " jar_name
 
 # Use the default name if no input provided
-jar_name=${jar_name:-custom-theme}
+jar_name=${jar_name:-$theme_name}
 
 # Add the .jar extension if not already present
 if [[ $jar_name != *".jar" ]]; then

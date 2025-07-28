@@ -54,12 +54,7 @@
     </#if>
 </head>
 
-<body id="keycloak-bg" class="${properties.kcBodyClass!}">
-<div id="kc-header" class="${properties.kcHeaderClass!}">
-    <div id="kc-header-wrapper"
-             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
-    </div>
-</div>
+<body id="keycloak-bg" class="pf-v5-c-background-image">
 <div class="pf-v5-c-login"
     x-data="{
         open: false,
@@ -86,8 +81,11 @@
 >
   <div class="pf-v5-c-login__container">
     <main class="pf-v5-c-login__main">
+    <div id="kc-header-wrapper"class="${properties.kcHeaderWrapperClass!}">
+    
+    </div>
       <header class="pf-v5-c-login__main-header">
-          <h1 class="pf-v5-c-title pf-m-3xl"><#nested "header"></h1>
+          <h1 class="pf-v5-c-title pf-m-3xl pf-v5-u-pb-xl"><#nested "header"></h1>
           <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
           <div class="pf-v5-c-login__main-header-utilities">
           <div class="pf-v5-c-form-control">
@@ -203,10 +201,16 @@
           </div>
         </#if>
       </div>
-      <footer class="pf-v5-c-login__main-footer">
+      <div class="pf-v5-c-login__main-footer">
         <#nested "socialProviders">
-      </footer>
+      </div>
     </main>
+    <footer class="pf-v5-c-login__footer pf-v5-c-content">
+         <div class="pf-v5-u-display-flex pf-v5-u-justify-content-center" >${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
+        <h1>Japanese Car Exporter for 25 years</h1>
+        <h3>Exporting quality used Japanese cars worldwide for over 20 years</h3>
+      <p>AA Japan is one of the most trusted used Japanese vehicle exporters in Japan and in the world. We export a wide range of second hand Japanese cars, trucks and other vehicles to countries like Kenya, Sri Lanka, Philippines, Paraguay, Australia, New Zealand, etc.</p>
+    </footer>
   </div>
 </div>
 <script type="module">

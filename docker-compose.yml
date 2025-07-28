@@ -15,7 +15,7 @@ services:
         POSTGRES_PASSWORD: password
 
   keycloak:
-      image: quay.io/keycloak/keycloak:25.0.4
+      image: quay.io/keycloak/keycloak:26.3.0
       command:
         - start-dev
       container_name: keycloak_server
@@ -25,7 +25,7 @@ services:
         # Providers
         # - './providers:/opt/keycloak/providers'
         # Development theme folder
-        - './themes/custom-theme/theme:/opt/keycloak/themes'
+        - './themes/aaj-theme/theme:/opt/keycloak/themes'
       depends_on:
         - postgres
       environment:
