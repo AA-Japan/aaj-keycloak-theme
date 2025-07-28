@@ -1,12 +1,18 @@
 :root {
   --root-font-family: "Inter", Helvetica, Arial, sans-serif;
 
-  --pf-v5-global--primary-color--100: #30302e;
-  --pf-v5-global--primary-color--200: #242424;
+  /* AAJapan Red */
+  --primary-color: #d8271b;
+  --primary-color-dark: #57140f;
+  /* AAJapan Gray */
+  --secondary-color: #30302e;
 
-  --pf-v5-global--primary-color--dark-100: #d8271b;
-  --pf-v5-global--link--Color: #d8271b;
-  --pf-v5-global--link--Color--hover: #7e170f;
+  --pf-v5-global--primary-color--100: var(--primary-color);
+  --pf-v5-global--primary-color--200: var(--primary-color-dark);
+
+  --pf-v5-global--primary-color--dark-100: var(--primary-color-dark);
+  --pf-v5-global--link--Color: var(--primary-color);
+  --pf-v5-global--link--Color--hover: var(--primary-color-dark);
 
   --pf-v5-global--FontFamily--text: var(--root-font-family);
   --pf-v5-global--FontFamily--heading: var(--root-font-family);
