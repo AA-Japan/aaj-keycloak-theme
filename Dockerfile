@@ -1,4 +1,6 @@
-FROM quay.io/keycloak/keycloak:26.3.0
+ARG KEYCLOAK_VERSION=26.4.7
+
+FROM quay.io/keycloak/keycloak:${KEYCLOAK_VERSION}
 
 # Enable health and metrics support
 ENV KC_HEALTH_ENABLED=true
