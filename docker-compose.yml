@@ -42,3 +42,4 @@ services:
         KEYCLOAK_ADMIN_PASSWORD: admin
         KC_HEALTH_ENABLED: "true"
         KC_LOG_LEVEL: info
+        # KC_FEATURES: "quick-theme"
