@@ -1,0 +1,142 @@
+:root {
+  --root-font-family: "Inter", Helvetica, Arial, sans-serif;
+
+  /* AA Japan brand: red accent, charcoal primary (erp-react secondary scale) */
+  --aaj-red: #d8271b;
+  --aaj-red-dark: #a81e15;
+  /* erp-react header navy (primary-900/950) for the primary button */
+  --erp-navy: #20425a;
+  --erp-navy-dark: #162a3b;
+  --secondary-100: #e7e7e7;
+  --secondary-500: #30302e; /* AAJ Dark Gray */
+  --secondary-800: #1e1e1d;
+  --secondary-900: #191918;
+  --secondary-950: #0f0f0e;
+  --secondary-400: #888888;
+  --page-bg: #ecf0f5;
+  --input-border: #d1d1d1; /* secondary-200 */
+  --input-border-hover: #b0b0b0; /* secondary-300 */
+  --radius: 3px;
+
+  --primary-color: var(--aaj-red);
+  --primary-color-dark: var(--aaj-red-dark);
+  --secondary-color: var(--secondary-500);
+
+  --pf-v5-global--primary-color--100: var(--secondary-500);
+  --pf-v5-global--primary-color--200: var(--secondary-900);
+  --pf-v5-global--primary-color--dark-100: var(--secondary-900);
+  --pf-v5-global--link--Color: var(--aaj-red);
+  --pf-v5-global--link--Color--hover: var(--aaj-red-dark);
+  --pf-v5-global--active-color--100: var(--secondary-500);
+
+  --pf-v5-global--BorderRadius--sm: var(--radius);
+  --pf-v5-global--FontFamily--text: var(--root-font-family);
+  --pf-v5-global--FontFamily--heading: var(--root-font-family);
+}
+
+::placeholder {
+  font-size: var(--pf-v5-global--FontSize--sm);
+}
+
+:where(body) {
+  font-size: var(--pf-v5-global--FontSize--sm);
+}
+
+.pf-v5-c-button {
+  cursor: pointer;
+  font-weight: 600;
+  --pf-v5-c-button--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-button--BorderRadius: var(--radius);
+}
+
+.pf-v5-c-button.pf-m-primary {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--erp-navy);
+  --pf-v5-c-button--m-primary--hover--BackgroundColor: var(--erp-navy-dark);
+  --pf-v5-c-button--m-primary--focus--BackgroundColor: var(--erp-navy-dark);
+  --pf-v5-c-button--m-primary--active--BackgroundColor: var(--erp-navy-dark);
+}
+
+/* Full 1px border like erp-react inputs instead of PF's bottom-underline style */
+.pf-v5-c-form-control {
+  --pf-v5-c-form-control--BorderRadius: var(--radius);
+  --pf-v5-c-form-control--before--BorderBottomWidth: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-form-control--before--BorderTopColor: var(--input-border);
+  --pf-v5-c-form-control--before--BorderRightColor: var(--input-border);
+  --pf-v5-c-form-control--before--BorderBottomColor: var(--input-border);
+  --pf-v5-c-form-control--before--BorderLeftColor: var(--input-border);
+  --pf-v5-c-form-control--after--BorderBottomWidth: 0;
+  --pf-v5-c-form-control--focus--after--BorderBottomWidth: 0;
+  border-radius: var(--radius);
+  min-height: 38px;
+}
+
+.pf-v5-c-form-control::before {
+  border-radius: var(--radius);
+}
+
+.pf-v5-c-form-control:hover {
+  --pf-v5-c-form-control--before--BorderTopColor: var(--input-border-hover);
+  --pf-v5-c-form-control--before--BorderRightColor: var(--input-border-hover);
+  --pf-v5-c-form-control--before--BorderBottomColor: var(--input-border-hover);
+  --pf-v5-c-form-control--before--BorderLeftColor: var(--input-border-hover);
+}
+
+.pf-v5-c-form-control:focus-within {
+  --pf-v5-c-form-control--before--BorderTopColor: var(--secondary-500);
+  --pf-v5-c-form-control--before--BorderRightColor: var(--secondary-500);
+  --pf-v5-c-form-control--before--BorderBottomColor: var(--secondary-500);
+  --pf-v5-c-form-control--before--BorderLeftColor: var(--secondary-500);
+  box-shadow: 0 0 0 3px var(--secondary-100);
+}
+
+.pf-v5-c-form-control.pf-m-error {
+  --pf-v5-c-form-control--before--BorderTopColor: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-form-control--before--BorderRightColor: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-form-control--before--BorderBottomColor: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-form-control--before--BorderLeftColor: var(--pf-v5-global--danger-color--100);
+}
+
+/* Password field + eye toggle read as one control */
+.pf-v5-c-input-group > .pf-v5-c-form-control,
+.pf-v5-c-input-group > .pf-v5-c-form-control::before {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.pf-v5-c-input-group > .pf-v5-c-button.pf-m-control {
+  --pf-v5-c-button--BorderRadius: 0 var(--radius) var(--radius) 0;
+  --pf-v5-c-button--after--BorderColor: var(--input-border);
+  --pf-v5-c-button--m-control--after--BorderBottomColor: var(--input-border);
+  --pf-v5-c-button--m-control--hover--after--BorderBottomColor: var(--input-border-hover);
+  --pf-v5-c-button--m-control--hover--after--BorderBottomWidth: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-button--m-control--focus--after--BorderBottomColor: var(--secondary-500);
+  --pf-v5-c-button--m-control--focus--after--BorderBottomWidth: var(--pf-v5-global--BorderWidth--sm);
+  color: var(--secondary-400);
+}
+
+.pf-v5-c-form__label {
+  font-weight: 600;
+  color: var(--secondary-500);
+  padding-bottom: var(--pf-v5-global--spacer--xs);
+}
+
+.pf-v5-c-form-control > :is(input, select, textarea):focus {
+  outline: none;
+}
+
+.pf-v5-c-check__input {
+  accent-color: var(--aaj-red);
+}
+
+.pf-v5-c-login__main-header {
+  text-align: center;
+}
+
+.login-pf-settings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kc-social-links {
+  flex-direction: column;
+}

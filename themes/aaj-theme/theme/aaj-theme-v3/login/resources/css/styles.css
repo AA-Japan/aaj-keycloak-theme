@@ -1,0 +1,170 @@
+/** Fonts **/
+@import url("./custom-font.css");
+/* Overrides */
+@import url("./overrides.css");
+/* Defaults */
+
+.aaj-v3 {
+  margin: 0;
+  background-color: var(--page-bg);
+}
+
+/* Reset PatternFly login wrapper; layout is handled by .aaj-stage */
+.aaj-v3 .pf-v5-c-login {
+  display: block;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Full-page charcoal gradient with a centred white card */
+.aaj-stage {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pf-v5-global--spacer--lg);
+  min-height: 100vh;
+  padding: var(--pf-v5-global--spacer--2xl) var(--pf-v5-global--spacer--md);
+  color: #fff;
+  background-color: var(--secondary-500);
+  background-image:
+    radial-gradient(at 0% 100%, rgba(216, 39, 27, 0.28) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 255, 255, 0.06) 0px, transparent 45%),
+    linear-gradient(160deg, var(--secondary-500) 0%, var(--secondary-950) 100%);
+}
+
+/* Pattern over the gradient: dot grid fading out from the corners */
+.aaj-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.2px, transparent 1.7px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, #000 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 100%, #000 0%, transparent 55%);
+  mask-image: radial-gradient(ellipse at 100% 0%, #000 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 100%, #000 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Faint diagonal light band */
+.aaj-stage::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(115deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%);
+  pointer-events: none;
+}
+
+.aaj-stage > * {
+  position: relative;
+  z-index: 1;
+}
+
+.aaj-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--pf-v5-global--spacer--sm);
+}
+
+.aaj-brand__logo {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+.aaj-brand__app {
+  padding-left: var(--pf-v5-global--spacer--sm);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: var(--pf-v5-global--FontSize--sm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.aaj-stage .pf-v5-c-login__main {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0;
+  align-self: center;
+  padding: var(--pf-v5-global--spacer--xl);
+  color: var(--pf-v5-global--Color--100);
+  background-color: #fff;
+  border-top: 3px solid var(--aaj-red);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.aaj-footer {
+  text-align: center;
+  font-size: var(--pf-v5-global--FontSize--xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Form card */
+.aaj-stage .pf-v5-c-login__main-header {
+  --pf-v5-c-login__main-header--PaddingTop: 0;
+  --pf-v5-c-login__main-header--PaddingRight: 0;
+  --pf-v5-c-login__main-header--PaddingLeft: 0;
+  --pf-v5-c-login__main-header--PaddingBottom: var(--pf-v5-global--spacer--lg);
+  text-align: left;
+}
+
+.aaj-stage .pf-v5-c-login__main-header .pf-v5-c-title {
+  font-weight: 600;
+  color: var(--secondary-500);
+}
+
+.aaj-stage .pf-v5-c-login__main-body {
+  --pf-v5-c-login__main-body--PaddingRight: 0;
+  --pf-v5-c-login__main-body--PaddingLeft: 0;
+  --pf-v5-c-login__main-body--PaddingBottom: 0;
+}
+
+.aaj-stage .pf-v5-c-login__main-header .pf-v5-c-title {
+  font-size: var(--pf-v5-global--FontSize--2xl);
+}
+
+/* Remember me / Forgot password on one row */
+.aaj-stage .login-pf-settings {
+  align-items: center;
+  font-size: var(--pf-v5-global--FontSize--sm);
+}
+
+.aaj-stage .login-pf-settings .checkbox label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pf-v5-global--spacer--sm);
+  cursor: pointer;
+}
+
+.aaj-stage .login-pf-settings .pf-v5-c-form__label-text {
+  font-weight: 400;
+}
+
+.aaj-stage #kc-login {
+  min-height: 40px;
+  margin-top: var(--pf-v5-global--spacer--sm);
+}
+
+.pf-v5-c-login__main-body .pf-v5-c-alert {
+  margin-bottom: var(--pf-v5-global--spacer--md);
+}
+
+/* Mobile: card fills the width, logo smaller */
+@media (max-width: 600px) {
+  .aaj-stage {
+    justify-content: flex-start;
+    padding: var(--pf-v5-global--spacer--xl) var(--pf-v5-global--spacer--md);
+  }
+
+  .aaj-brand__logo {
+    height: 36px;
+  }
+
+  .aaj-stage .pf-v5-c-login__main {
+    max-width: none;
+    padding: var(--pf-v5-global--spacer--lg);
+  }
+}
